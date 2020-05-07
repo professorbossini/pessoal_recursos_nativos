@@ -1,18 +1,20 @@
-import { ADD_PLACE } from './places-actions'
+import { ADD_LUGAR } from './lugares-actions'
 import Lugar from '../modelo/Lugar'
 const estadoInicial = {
     lugares: []
 };
 
 export default (estado = estadoInicial, action) => {
-    switch (action) {
-        case ADD_PLACE:
-            //lógica aqui
-            const novoLugar = new Lugar(new Date().toString(), action.placeData.title);
+    switch (action.type) {
+        case ADD_LUGAR:
+            const l = new Lugar(new Date().toString(), action.dadosLugar.nomeLugar, action.dadosLugar.imagem);
+            console.log(JSON.stringify(l))
             return {
-                lugares: estado.lugares.concat(novoLugar)
-            }
+                lugares: estado.lugares.concat(l)
+            };
+
         default:
-            return state;
+            console.log('aqui' + JSON.stringify(action))
+            return estado;
     }
 }

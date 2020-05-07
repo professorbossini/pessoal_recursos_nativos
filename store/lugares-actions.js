@@ -1,7 +1,7 @@
 export const ADD_LUGAR = 'ADD_LUGAR';
 
-export const addLugar = titulo => {
+export const addLugar = (nomeLugar, imagem) => {
     return {
-        type: ADD_LUGAR, placeData: { title: title }
+        type: ADD_LUGAR, dadosLugar: { nomeLugar: nomeLugar, imagem: imagem }
     }
 }
