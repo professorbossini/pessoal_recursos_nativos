@@ -6,6 +6,16 @@ import reduxThunk from 'redux-thunk';
 
 import lugaresReducer from './store/lugares-reducer'
 
+import { init } from './helpers/db';
+
+init().then(() => {
+  console.log("Criação da base ocorreu com sucesso.");
+}).catch((err) => {
+  console.log('Criação da base falhou.');
+  console.log(err);
+});
+
+
 //mapeamento o reducer ao identificador "lugares"
 const rootReducer = combineReducers({
   lugares: lugaresReducer
