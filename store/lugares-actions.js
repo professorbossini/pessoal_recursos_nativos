@@ -37,11 +37,11 @@ export const addLugar = (nomeLugar, imagem) => {
 
             );
             console.log(resultadoDB);
+            dispatch({ type: ADD_LUGAR, dadosLugar: { id: resultadoDB.insertId, nomeLugar: nomeLugar, imagem: novoPath } })
         }
         catch (err) {
             console.log(err);
             throw err;
         }
-        dispatch({ type: ADD_LUGAR, dadosLugar: { id: resultadoDB.insertId, nomeLugar: nomeLugar, imagem: novoPath } })
     };
 }

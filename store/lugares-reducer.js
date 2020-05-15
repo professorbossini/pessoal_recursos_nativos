@@ -8,7 +8,7 @@ export default (estado = estadoInicial, action) => {
     switch (action.type) {
         case LISTA_LUGARES:
             return {
-                lugares: action.lugares.map(p => new Place(p.id.toString(), p.nomeLugar, p.imagem))
+                lugares: action.lugares.map(l => new Lugar(l.id.toString(), l.nomeLugar, l.imagem))
             }
         case ADD_LUGAR:
             const l = new Lugar(action.dadosLugar.id.toString(), action.dadosLugar.nomeLugar, action.dadosLugar.imagem);
