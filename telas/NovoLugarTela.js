@@ -7,6 +7,9 @@ import { useDispatch } from 'react-redux';
 import * as lugaresActions from '../store/lugares-actions';
 
 import TiraFoto from '../componentes/TiraFoto';
+import CapturaLocalizacao from '../componentes/CapturaLocalizacao';
+
+
 
 
 const NovoLugarTela = (props) => {
@@ -39,6 +42,7 @@ const NovoLugarTela = (props) => {
                     value={novoLugar}
                 />
                 <TiraFoto onFotoTirada={fotoTirada} />
+                <CapturaLocalizacao />
                 <Button
                     title="Salvar Lugar"
                     color={Cores.primary}
